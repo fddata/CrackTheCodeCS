@@ -31,6 +31,16 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void ReturnTrueIfNull()
+        {
+            //act
+            bool result = Q1_1.areAllCharsUnique("");
+
+            //assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
         public void ReturnTrueIfUniqeNoAdditional()
         {
             //act
@@ -49,6 +59,16 @@ namespace UnitTests
 
             //assert
             Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void ReturnTrueIfNullNoAdditional()
+        {
+            //act
+            bool result = Q1_1.areAllCharsUniqueNoAdditional("");
+
+            //assert
+            Assert.IsTrue(result);
         }
 
     }
