@@ -38,6 +38,13 @@ namespace Code.Chapter1
             //cannot use additional data structures so loop through
             //each letter and compare it with the remaining letters
 
+
+            if (String.IsNullOrEmpty(inputString))
+            {
+                return true;
+            }
+
+
             for (int i = 0; i < inputString.Length; i++)
             {
                 for (int j = i + 1; j < inputString.Length; j++)
