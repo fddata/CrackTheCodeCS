@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Code.Chapter1;
+using System;
 
 namespace UnitTests.Chapter1
 {
@@ -29,7 +30,20 @@ namespace UnitTests.Chapter1
             bool result = Q1_2.isPermutation(_permutation1, _notpermuation);
 
             //assert
-            Assert.IsFalse(result);
+            Assert.IsFalse(result);        
+        }
+
+        [TestMethod]
+        public void RaisesExceptionIfNullPassed()
+        {
+            //arrange
+            bool result;
+
+            //act
+            Action action = () => result = Q1_2.isPermutation(_permutation1, null);
+
+            //assert
+            Assert.ThrowsException<ArgumentNullException>( action );   
         }
 
 

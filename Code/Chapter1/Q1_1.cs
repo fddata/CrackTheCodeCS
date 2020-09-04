@@ -59,7 +59,5 @@ namespace Code.Chapter1
             return true;
         }
 
-
-
     }
 }
