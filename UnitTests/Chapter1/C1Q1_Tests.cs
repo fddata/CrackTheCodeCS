@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Code.Chapter1;
 
-namespace UnitTests
+namespace UnitTests.Chapter1
 {
     [TestClass]
     public class C1Q1_Tests
