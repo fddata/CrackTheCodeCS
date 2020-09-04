@@ -34,7 +34,7 @@ namespace UnitTests.Chapter1
         }
 
         [TestMethod]
-        public void RaisesExceptionIfNullPassed()
+        public void RaisesExceptionIfOneNullPassed()
         {
             //arrange
             bool result;
@@ -44,6 +44,36 @@ namespace UnitTests.Chapter1
 
             //assert
             Assert.ThrowsException<ArgumentNullException>( action );   
+        }
+
+        public void RaisesExceptionIfTwoNullPassed()
+        {
+            //arrange
+            bool result;
+
+            //act
+            Action action = () => result = Q1_2.isPermutation(null, null);
+
+            //assert
+            Assert.ThrowsException<ArgumentNullException>(action);
+        }
+
+
+        [TestMethod]
+        public void TwoEmptyStringsReturnsTrue()
+        {
+            //arrange
+            bool result1;
+            bool result2;
+            bool result3;
+
+            //act
+            result1 = Q1_2.isPermutation("", "");
+            result2 = Q1_2.isPermutation(String.Empty, String.Empty);
+            result3 = Q1_2.isPermutation(String.Empty, "");
+
+            //assert
+            Assert.IsTrue(result1 && result2 && result3);
         }
 
 
