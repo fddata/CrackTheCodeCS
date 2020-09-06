@@ -100,38 +100,32 @@ namespace Code.Chapter1
 
 
 
+        //TODO - can use a dict for non ascii strings
+        //public static bool isPermutationDict(string str1, string str2)
+        //{
 
-        public static bool isPermutationDict(string str1, string str2)
-        {
-
-            if ((str1 == null) || (str2 == null))
-            {
-                throw new ArgumentNullException("argument(s) cannot be null");
-            }
-
-
-            if ((str1 == String.Empty) && (str2 == String.Empty)) //i.e. "" 
-            {
-                return true;
-            }
+        //    if ((str1 == null) || (str2 == null))
+        //    {
+        //        throw new ArgumentNullException("argument(s) cannot be null");
+        //    }
 
 
-            if (str1.Length != str2.Length)
-            {
-                return false;
-            }
+        //    if ((str1 == String.Empty) && (str2 == String.Empty)) //i.e. "" 
+        //    {
+        //        return true;
+        //    }
 
 
-            var dictionary1 = GetCharCountDictFromString(str1);
-            var dictionary2 = GetCharCountDictFromString(str2);
-
-            return (dictionary2)
-                .OrderBy(kvp => kvp.Key)
-                .SequenceEqual((dictionary1)
-                                   .OrderBy(kvp => kvp.Key));
+        //    if (str1.Length != str2.Length)
+        //    {
+        //        return false;
+        //    }
 
 
-        }
+        //    var dictionary1 = GetCharCountDictFromString(str1);
+
+
+        //}
 
         private static Dictionary<char, int> GetCharCountDictFromString(string inputString)
         {
