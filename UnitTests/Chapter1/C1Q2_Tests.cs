@@ -77,5 +77,26 @@ namespace UnitTests.Chapter1
         }
 
 
+        [TestMethod]
+        public void ReturnsTrueIfPermutationASCII()
+        {
+            //act
+            bool result = Q1_2.isPermutationASCII(_permutation1, _permutation2);
+
+            //assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ReturnsFalseIfNotPermutationASCII()
+        {
+            //act
+            bool result = Q1_2.isPermutationASCII(_permutation1, _notpermuation);
+
+            //assert
+            Assert.IsFalse(result);
+        }
+
+
     }
 }
