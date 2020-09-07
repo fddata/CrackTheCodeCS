@@ -14,11 +14,56 @@ namespace Code.Chapter1
         //perform this operation in place.)
         //Hints: #53, #118
 
-        public static string ConvertStringSpacesToHTML(char[] chars, int length)
+        public static char[] GetHTMLSpaceStringFromCharArray(char[] chars, int length)
         {
-            return "hjfghfg";
+            if(chars == null)
+            {
+                throw new ArgumentNullException(" argument cannot be null ");
+            }
 
+            if (length == 0)
+            {
+                return chars;  //received an empty array, so just return it 
+            }
 
+            int numSpaces = 0;
+            for (int i = length - 1; i >= 0; i--)
+            {
+                if (chars[i] == ' ')
+                {
+                    numSpaces++;
+                }
+            }
+
+            if (numSpaces == 0)
+            {
+                return chars;  //no spaces, so just return it 
+            }
+
+            var offset = numSpaces * 2;
+            
+            Console.WriteLine($"numSpaces is {numSpaces}");
+            for(int i = length - 1; i >= 0; i--)
+            {
+                if(chars[i] == ' ')
+                {
+                    chars[i + offset - 2] = '%';
+                    chars[i + offset - 1] = '2';
+                    chars[i + offset ] = '0';
+
+                    offset -= 2;
+                }
+                else
+                {
+                    chars[i + offset] = chars[i];
+                }
+
+                Console.WriteLine($"chars is now: { new string(chars)}");
+                Console.WriteLine($"offset is now: {offset}");
+            }            
+
+            return chars;
+            
         }
 
 
