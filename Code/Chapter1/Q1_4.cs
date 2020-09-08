@@ -17,8 +17,6 @@ namespace Code.Chapter1
         //Hints: #106, #121, #134, #136 
 
 
-        //palindrome must have only 1 or zero characters with an odd number 
-
         public static bool IsStringAPalindromePermutation(string input)
         {
             if (input == null)
