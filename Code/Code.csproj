@@ -45,7 +45,6 @@
     <Compile Include="Chapter1\Q1_3.cs" />
     <Compile Include="Chapter1\Q1_2.cs" />
     <Compile Include="Chapter1\Q1_1.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
