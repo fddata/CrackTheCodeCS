@@ -64,5 +64,54 @@ namespace Code.Chapter1
                 return result;
             }
         }
+        
+        /// <summary>
+        /// Different (and simpler than above) method utilising the StringBuilder class
+        /// </summary>
+        public static string CompressStringV2(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                throw new ArgumentException("CompressString method found null or empty parameter:", nameof(input));
+            }
+
+            if (input.Length == 1)
+            {
+                return input;
+            }
+
+            var result = new StringBuilder();
+
+            char currentChar = input[0];
+            int counter = 1;
+
+            for(int i = 1; i < input.Length; i++)
+            {
+                if( input[i] == currentChar)
+                {
+                    counter++;
+                }
+                else
+                {
+                    result.Append(currentChar);
+                    result.Append(counter);
+                    counter = 1;
+                    currentChar = input[i];
+                }
+            }
+
+            result.Append(currentChar);
+            result.Append(counter);
+
+            if (input.Length <= result.Length)
+            {
+                return input;
+            }
+            else
+            {
+                return result.ToString();
+            }
+        }
     }
 }
+

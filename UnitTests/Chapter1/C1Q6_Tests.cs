@@ -47,7 +47,45 @@ namespace UnitTests.Chapter1
             Assert.AreEqual("a2b1c5a3d24e1f1g1", result);
         }
 
+        [TestMethod]
+        public void LongStringNoDuplicatesReturnsOriginalV2()
+        {
+            //ARRANGE
+            string noDuplicates = "abcdefgh";
 
+            //ACT
+            var result = Q1_6.CompressStringV2(noDuplicates);
+
+            //ASSERT
+            Assert.AreEqual("abcdefgh", result);
+        }
+
+
+        [TestMethod]
+        public void StringWithDuplicatesCompressedOKV2()
+        {
+            //ARRANGE
+            string duplicates = "aabcccccaaa";
+
+            //ACT
+            var result = Q1_6.CompressStringV2(duplicates);
+
+            //ASSERT
+            Assert.AreEqual("a2b1c5a3", result);
+        }
+
+        [TestMethod]
+        public void StringWithDuplicatesCompressedOKWithSinglesAtEndV2()
+        {
+            //ARRANGE
+            string duplicates2 = "aabcccccaaaddddddddddddddddddddddddefg";
+
+            //ACT
+            var result = Q1_6.CompressStringV2(duplicates2);
+
+            //ASSERT
+            Assert.AreEqual("a2b1c5a3d24e1f1g1", result);
+        }
 
     }
 }
